@@ -13,7 +13,7 @@ body {
   padding: 50px;
 }
 
-/* 🔹 Image Animation */
+/* 🦅 Image Animation */
 .image-container {
   display: flex;
   justify-content: center;
@@ -21,15 +21,17 @@ body {
 }
 
 .animated-image {
-  width: 300px;
+  width: 250px;
   border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   animation: float 3s ease-in-out infinite;
   transition: transform 0.5s ease;
 }
 
 .animated-image:hover {
-  transform: scale(1.1);
+  transform: scale(1.1) rotate(3deg);
 }
 
 @keyframes float {
@@ -38,9 +40,9 @@ body {
   100% { transform: translateY(0px); }
 }
 
-/* 🔹 Button Transition */
+/* 🟩 Button Transition */
 .hover-button {
-  background-color: #007BFF;
+  background-color: #004C54; /* Eagles Green */
   color: white;
   border: none;
   padding: 15px 35px;
@@ -52,12 +54,12 @@ body {
 }
 
 .hover-button:hover {
-  background-color: #0056b3;
+  background-color: #A5ACAF; /* Silver tone */
   transform: scale(1.1);
-  box-shadow: 0 0 25px #007BFF;
+  box-shadow: 0 0 25px #004C54;
 }
 
-/* 🔹 Link Hover Effect */
+/* 🔸 Link Hover Effect */
 .links a {
   text-decoration: none;
   color: #333;
