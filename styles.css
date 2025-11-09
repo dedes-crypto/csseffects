@@ -1,0 +1,51 @@
+/* 
+  CSS Effects:
+  - Image: slow rotation animation using @keyframes.
+  - Button: smooth color and scale transition on hover.
+*/
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f4f4f4;
+  padding-top: 50px;
+}
+
+.animated-image {
+  width: 250px;
+  height: 250px;
+  border-radius: 15px;
+  transition: transform 2s;
+  animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.hover-button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.hover-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.1);
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #FFA500;
+}
