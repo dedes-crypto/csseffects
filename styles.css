@@ -1,19 +1,29 @@
 /*
   CSS Effects:
-  - Image: smooth floating + zoom-in animation
-  - Button: glowing transition when hovered
+  - Image: glowing + floating animation
+  - Button: bounce animation when hovered
   - Links: hover color changes to #FFA500 (orange)
+  - Background: animated ombre gradient inspired by Eagles colors
 */
 
 body {
   font-family: 'Poppins', sans-serif;
   text-align: center;
-  background: linear-gradient(to bottom, #f9f9f9, #e3f2fd);
-  color: #333;
+  color: #fff;
   padding: 50px;
+  background: linear-gradient(135deg, #004C54, #A5ACAF, #004C54);
+  background-size: 400% 400%;
+  animation: gradientShift 10s ease infinite;
 }
 
-/* 🦅 Image Animation */
+/* 🎨 Animated background ombre */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 🦅 Image Glow + Float */
 .image-container {
   display: flex;
   justify-content: center;
@@ -22,16 +32,17 @@ body {
 
 .animated-image {
   width: 250px;
-  border-radius: 15px;
-  background-color: white;
   padding: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0, 76, 84, 0.7);
   animation: float 3s ease-in-out infinite;
-  transition: transform 0.5s ease;
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
 }
 
 .animated-image:hover {
-  transform: scale(1.1) rotate(3deg);
+  transform: scale(1.1) rotate(2deg);
+  box-shadow: 0 0 45px #00ffcc;
 }
 
 @keyframes float {
@@ -40,35 +51,44 @@ body {
   100% { transform: translateY(0px); }
 }
 
-/* 🟩 Button Transition */
+/* 💚 Button Bounce Effect */
 .hover-button {
-  background-color: #004C54; /* Eagles Green */
+  background-color: #004C54;
   color: white;
   border: none;
-  padding: 15px 35px;
-  border-radius: 25px;
-  font-size: 18px;
+  padding: 15px 40px;
+  border-radius: 30px;
+  font-size: 20px;
   cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
 }
 
 .hover-button:hover {
-  background-color: #A5ACAF; /* Silver tone */
-  transform: scale(1.1);
-  box-shadow: 0 0 25px #004C54;
+  background-color: #A5ACAF;
+  box-shadow: 0 0 25px #00ffcc;
+  animation: bounce 0.8s ease;
+}
+
+/* 🎯 Bounce animation */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-20px); }
+  60% { transform: translateY(-10px); }
 }
 
 /* 🔸 Link Hover Effect */
 .links a {
   text-decoration: none;
-  color: #333;
+  color: #fff;
   font-weight: bold;
-  font-size: 17px;
+  font-size: 18px;
   margin: 0 10px;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .links a:hover {
   color: #FFA500;
+  text-shadow: 0 0 10px #FFA500;
 }
