@@ -1,62 +1,74 @@
-/* styles.css */
-/* This stylesheet includes effects for the image and button elements */
+/*
+  CSS Effects:
+  - Image: smooth floating + zoom-in animation
+  - Button: glowing transition when hovered
+  - Links: hover color changes to #FFA500 (orange)
+*/
 
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f0f0f0;
-    margin: 0;
-    padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  background: linear-gradient(to bottom, #f9f9f9, #e3f2fd);
+  color: #333;
+  padding: 50px;
 }
 
-header {
-    margin-bottom: 20px;
-}
-
-main {
-    margin: 20px 0;
-}
-
-footer {
-    margin-top: 40px;
-    font-size: 0.9em;
-    color: #555;
+/* 🦅 Image Animation */
+.image-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
 }
 
 .animated-image {
-    width: 100%;
-    max-width: 300px;
-    transition: transform 0.5s ease, filter 0.5s ease; /* Image zoom and blur effect */
+  width: 250px;
+  border-radius: 15px;
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  animation: float 3s ease-in-out infinite;
+  transition: transform 0.5s ease;
 }
 
 .animated-image:hover {
-    transform: scale(1.1); /* Zooms in the image on hover */
-    filter: brightness(1.1); /* Brighten image on hover */
+  transform: scale(1.1) rotate(3deg);
 }
 
-.animated-button {
-    padding: 10px 20px;
-    background-color: #008CBA; /* Initial button color */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Button color change and scale */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
 }
 
-.animated-button:hover {
-    background-color: #005F75; /* Darker blue on hover */
-    transform: scale(1.05); /* Slightly enlarge button on hover */
+/* 🟩 Button Transition */
+.hover-button {
+  background-color: #004C54; /* Eagles Green */
+  color: white;
+  border: none;
+  padding: 15px 35px;
+  border-radius: 25px;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
 }
 
-.link {
-    text-decoration: none;
-    color: black;
-    font-size: 1.1em;
-    transition: color 0.3s ease; /* Link color change */
+.hover-button:hover {
+  background-color: #A5ACAF; /* Silver tone */
+  transform: scale(1.1);
+  box-shadow: 0 0 25px #004C54;
 }
 
-.link:hover {
-    color: #FFA500; /* Changes link color on hover */
+/* 🔸 Link Hover Effect */
+.links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 17px;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.links a:hover {
+  color: #FFA500;
 }
