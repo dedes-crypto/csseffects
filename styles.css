@@ -1,62 +1,54 @@
-/* styles.css */
-/* This stylesheet includes effects for the image and button elements */
+/* 
+  CSS Effects:
+  - Image: slow rotation animation using @keyframes.
+  - Button: smooth color and scale transition on hover.
+*/
 
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f0f0f0;
-    margin: 0;
-    padding: 20px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f4f4f4;
+  padding-top: 50px;
 }
 
-header {
-    margin-bottom: 20px;
-}
-
-main {
-    margin: 20px 0;
-}
-
-footer {
-    margin-top: 40px;
-    font-size: 0.9em;
-    color: #555;
-}
-
+/* 🔸 Image Animation */
 .animated-image {
-    width: 100%;
-    max-width: 300px;
-    transition: transform 0.5s ease, filter 0.5s ease; /* Image zoom and blur effect */
+  width: 250px;
+  height: 250px;
+  border-radius: 15px;
+  transition: transform 2s;
+  animation: spin 10s linear infinite;
 }
 
-.animated-image:hover {
-    transform: scale(1.1); /* Zooms in the image on hover */
-    filter: brightness(1.1); /* Brighten image on hover */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
-.animated-button {
-    padding: 10px 20px;
-    background-color: #008CBA; /* Initial button color */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Button color change and scale */
+/* 🔸 Button Transition */
+.hover-button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
-.animated-button:hover {
-    background-color: #005F75; /* Darker blue on hover */
-    transform: scale(1.05); /* Slightly enlarge button on hover */
+.hover-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.1);
 }
 
-.link {
-    text-decoration: none;
-    color: black;
-    font-size: 1.1em;
-    transition: color 0.3s ease; /* Link color change */
+/* 🔸 Link hover color */
+a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
 }
 
-.link:hover {
-    color: #FFA500; /* Changes link color on hover */
+a:hover {
+  color: #FFA500;
 }
