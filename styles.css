@@ -1,194 +1,62 @@
-/* style.css
-   Modern CSS Effects Page (Kelly Green Eagles theme)
-   - Image effect: floating animation + scale-up on hover (see .animated-image)
-   - Button effect: glowing pulse + scale on hover (see .hover-button)
-   - Links: hover color set to #FFA500 as required
-*/
+/* styles.css */
+/* This stylesheet includes effects for the image and button elements */
 
-/* Color variables for easy tuning */
-:root{
-  --midnight-green: #004C54;
-  --kelly-green:  #00B140;
-  --kelly-dark:   #009739;
-  --accent-silver: #A5ACAF;
-  --bg:           #071428; /* deep midnight background */
-  --card-bg:      #071f24; /* slightly lighter card background for contrast */
-  --white:        #ffffff;
-  --orange:       #FFA500;
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
 }
 
-/* Basic page layout & typography */
-* { box-sizing: border-box; }
-
-html,body {
-  height: 100%;
-  margin: 0;
-  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  background: linear-gradient(180deg, var(--bg) 0%, #02262a 100%);
-  color: var(--white);
-  -webkit-font-smoothing:antialiased;
+header {
+    margin-bottom: 20px;
 }
 
-header{
-  text-align: center;
-  padding: 3rem 1rem 1.5rem;
+main {
+    margin: 20px 0;
 }
 
-h1 {
-  margin: 0;
-  font-size: 2rem;
-  letter-spacing: .6px;
-  text-shadow: 0 6px 18px rgba(0,0,0,0.6);
-}
-
-.subtitle {
-  margin-top: 0.5rem;
-  color: var(--accent-silver);
-  font-weight: 500;
-}
-
-/* Grid layout for the three cards */
-.grid-layout{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
-  padding: 2rem;
-  max-width: 1100px;
-  margin: 0 auto 3rem;
-}
-
-/* Card style */
-.media-card{
-  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(0,0,0,0.06));
-  border-radius: 14px;
-  padding: 1.25rem;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.55);
-  border: 1px solid rgba(255,255,255,0.04);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-/* Card headings and description */
-.media-card h2 {
-  margin: 0 0 0.75rem 0;
-  color: var(--white);
-  font-size: 1.05rem;
-}
-.desc {
-  margin-top: 0.75rem;
-  color: var(--accent-silver);
-  font-size: 0.95rem;
-  line-height: 1.4;
-}
-
-/* =========================
-   IMAGE EFFECT (animated-image)
-   - subtle floating keyframe (float)
-   - hover: scale up and stronger glow (Kelly Green)
-   ========================= */
-.animated-image {
-  width: 260px;
-  max-width: 100%;
-  border-radius: 12px;
-  background: var(--white);
-  padding: 12px;
-  display: block;
-  transition: transform 450ms cubic-bezier(.2,.9,.3,1), box-shadow 300ms;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
-  animation: float 4s ease-in-out infinite;
-}
-
-/* hover/keyboard focus state for accessibility */
-.animated-image:hover,
-.animated-image:focus {
-  transform: translateY(-6px) scale(1.08);
-  box-shadow: 0 18px 45px rgba(0,177,64,0.18), 0 6px 18px rgba(0,0,0,0.6);
-  outline: none;
-}
-
-/* floating keyframes */
-@keyframes float {
-  0%   { transform: translateY(0); }
-  50%  { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
-}
-
-/* =========================
-   BUTTON EFFECT (hover-button)
-   - base uses Kelly Green and rounded shape
-   - hover: scale + glow pulsing effect using box-shadow
-   - focus-visible: strong outline for keyboard users
-   ========================= */
-.hover-button {
-  margin-top: 8px;
-  background: linear-gradient(180deg, var(--kelly-green), var(--kelly-dark));
-  color: var(--white);
-  border: none;
-  padding: 14px 36px;
-  font-size: 1rem;
-  border-radius: 999px;
-  cursor: pointer;
-  transition: transform 220ms ease, box-shadow 220ms ease, background 220ms;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.45), 0 0 0 0 rgba(0,0,0,0);
-}
-
-/* hover effect - scale + neon-ish glow */
-.hover-button:hover {
-  transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.55), 0 0 30px rgba(0,177,64,0.18);
-  background: linear-gradient(180deg, #00c853, var(--kelly-dark));
-}
-
-/* accessible keyboard focus */
-.hover-button:focus-visible {
-  outline: 3px solid rgba(0,177,64,0.24);
-  outline-offset: 4px;
-}
-
-/* =========================
-   LINKS: hover color must be #FFA500
-   - ensure good contrast when not hovered
-   - underline on focus for keyboard users
-   ========================= */
-.media-card .links, .links {
-  margin-top: 8px;
-}
-
-.grid-layout a,
-.links a {
-  color: var(--white);
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 180ms ease, transform 180ms;
-}
-
-.grid-layout a:hover,
-.links a:hover {
-  color: var(--orange); /* required hover color */
-  transform: translateY(-2px);
-}
-
-.grid-layout a:focus,
-.links a:focus {
-  text-decoration: underline;
-  outline: 3px solid rgba(255,165,0,0.12);
-  outline-offset: 4px;
-}
-
-/* Small responsive tweaks */
-@media (max-width: 520px){
-  .animated-image { width: 220px; }
-  .hover-button { padding: 12px 28px; font-size: .95rem; }
-  .grid-layout { padding: 1rem; gap: 16px; }
-  header { padding-top: 2rem; }
-}
-
-/* Footer styling (if you add a footer) */
 footer {
-  text-align: center;
-  color: var(--accent-silver);
-  padding: 2rem 1rem;
-  font-size: .95rem;
+    margin-top: 40px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.animated-image {
+    width: 100%;
+    max-width: 300px;
+    transition: transform 0.5s ease, filter 0.5s ease; /* Image zoom and blur effect */
+}
+
+.animated-image:hover {
+    transform: scale(1.1); /* Zooms in the image on hover */
+    filter: brightness(1.1); /* Brighten image on hover */
+}
+
+.animated-button {
+    padding: 10px 20px;
+    background-color: #008CBA; /* Initial button color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Button color change and scale */
+}
+
+.animated-button:hover {
+    background-color: #005F75; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+    font-size: 1.1em;
+    transition: color 0.3s ease; /* Link color change */
+}
+
+.link:hover {
+    color: #FFA500; /* Changes link color on hover */
 }
