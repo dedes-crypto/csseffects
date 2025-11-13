@@ -5,7 +5,7 @@
   3️⃣ Link: hover color changes to #FFA500 (orange)
 */
 
-/* 🌈 Background and text */
+/* 🌈 Animated background */
 body {
   font-family: Arial, sans-serif;
   text-align: center;
@@ -16,7 +16,6 @@ body {
   color: #222;
 }
 
-/* 💫 Moving ombre background */
 @keyframes bgMove {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -35,9 +34,9 @@ body {
   100% { transform: scale(1); }
 }
 
-/* 🟩 BUTTON - AUTOMATIC BOUNCE EFFECT */
+/* 🟩 BUTTON - AUTOMATIC BOUNCE */
 .bounce-btn {
-  background-color: #004C54; /* Eagles green */
+  background-color: #004C54;
   color: white;
   border: none;
   padding: 15px 35px;
@@ -63,5 +62,5 @@ a {
 }
 
 a:hover {
-  color: #FFA500; /* orange */
+  color: #FFA500;
 }
